@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
 import localFont from "next/font/local";
+import NavBar from "@/components/NavBar";
 
 
 const myFont = localFont({
@@ -27,6 +27,7 @@ export default function RootLayout({
       <body className={myFont.className}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
         <ThemeProvider theme={theme}>
+          <NavBar/>
           {children}
           </ThemeProvider>
           </AppRouterCacheProvider>

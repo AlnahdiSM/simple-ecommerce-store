@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "title": "ساعة ذكية 1",
+    "description": "ساعة ذكية متعددة الوظائف بتصميم أنيق وعصري، مثالية لتتبع نشاطك اليومي وتحسين لياقتك البدنية. توفر لك تنبيهات فورية، وتتبع النوم،وقياس معدل ضربات القلب، مع بطارية تدوم لأيام طويلة.",
+    "price": 549,
+    "thumbnail": "//public/img/background.jpg",
+    "image1": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image2": "/public/img/background.jpg",
+    "image3": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image4": "/public/img/background.jpg",
+    "image5[": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg"
+  },
+  {
+    "id": 2,
+    "title": "ساعة ذكية 2",
+    "description": "ساعة ذكية متعددة الوظائف بتصميم أنيق وعصري، مثالية لتتبع نشاطك اليومي وتحسين لياقتك البدنية. توفر لك تنبيهات فورية، وتتبع النوم،وقياس معدل ضربات القلب، مع بطارية تدوم لأيام طويلة.",
+    "price": 549,
+    "thumbnail": "/public/img/background.jpg",
+    "image1": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image2": "/public/img/background.jpg",
+    "image3": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image4": "/public/img/background.jpg",
+    "image5": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg"
+ 
+  },
+  {
+    "id": 3,
+    "title": "ساعة ذكية 3",
+    "description": "ساعة ذكية متعددة الوظائف بتصميم أنيق وعصري، مثالية لتتبع نشاطك اليومي وتحسين لياقتك البدنية. توفر لك تنبيهات فورية، وتتبع النوم،وقياس معدل ضربات القلب، مع بطارية تدوم لأيام طويلة.",
+    "price": 549,
+    "thumbnail": "//public/img/background.jpg",
+    "image1": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image2": "/public/img/background.jpg",
+    "image3": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image4": "/public/img/background.jpg",
+    "image5": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg"
+  },
+  {
+    "id": 4,
+    "title": "ساعة ذكية 1",
+    "description": "ساعة ذكية متعددة الوظائف بتصميم أنيق وعصري، مثالية لتتبع نشاطك اليومي وتحسين لياقتك البدنية. توفر لك تنبيهات فورية، وتتبع النوم،وقياس معدل ضربات القلب، مع بطارية تدوم لأيام طويلة.",
+    "price": 549,
+    "thumbnail": "//public/img/background.jpg",
+    "image1": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image2": "/public/img/background.jpg",
+    "image3": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image4": "/public/img/background.jpg",
+    "image5": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg"
+  },
+  {
+    "id": 5,
+    "title": "ساعة ذكية 2",
+    "description": "ساعة ذكية متعددة الوظائف بتصميم أنيق وعصري، مثالية لتتبع نشاطك اليومي وتحسين لياقتك البدنية. توفر لك تنبيهات فورية، وتتبع النوم،وقياس معدل ضربات القلب، مع بطارية تدوم لأيام طويلة.",
+    "price": 549,
+    "thumbnail": "//public/img/background.jpg",
+    "image1": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image2": "/public/img/background.jpg",
+    "image3": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image4": "/public/img/background.jpg",
+    "image5": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg"
+  },
+  {
+    "id": 6,
+    "title": "ساعة ذكية 3",
+    "description": "ساعة ذكية متعددة الوظائف بتصميم أنيق وعصري، مثالية لتتبع نشاطك اليومي وتحسين لياقتك البدنية. توفر لك تنبيهات فورية، وتتبع النوم،وقياس معدل ضربات القلب، مع بطارية تدوم لأيام طويلة.",
+    "price": 549,
+    "thumbnail": "//public/img/background.jpg",
+   "image1": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image2": "/public/img/background.jpg",
+    "image3": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg",
+    "image4": "/public/img/background.jpg",
+    "image5": "/public/img/yellow-shopping-cart-blue-background_343170-6381.jpg"
+  }
+]
