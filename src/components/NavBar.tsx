@@ -14,6 +14,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const pages = [
   {
@@ -28,6 +30,9 @@ const pages = [
 const settings = ["Logout"];
 
 function NavBar() {
+  const Router = useRouter();
+  const userJson = localStorage.getItem("user");
+  const user = userJson && JSON.parse(userJson) ;
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -87,9 +92,11 @@ function NavBar() {
             >
               {pages.map((page) => (
                 <Link href={page.href}>
-                <MenuItem key={page.href} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.label}</Typography>
-                </MenuItem>
+                  <MenuItem key={page.href} onClick={handleCloseNavMenu}>
+                    <div>
+                      <Typography textAlign="center">{page.label}</Typography>
+                    </div>
+                  </MenuItem>
                 </Link>
               ))}
             </Menu>
@@ -103,17 +110,23 @@ function NavBar() {
               gap: 2,
             }}
           >
-            {pages.map((page) => (
-              <Link href={page.href}>
-                <Button
-                  key={page.href}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page.label}
-                </Button>
-              </Link>
-            ))}
+            {pages.map((page) => {
+              
+              return (
+                <Link href={page.href} >
+                  <Button
+                    key={page.href}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                    className={cn("text-white",
+                      page.label === "إضافة منتج" && user && !user.isAdmin && "hidden",
+                    )}
+                  >
+                    {page.label}
+                  </Button>
+                </Link>
+              );
+            })}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -140,7 +153,12 @@ function NavBar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <div onClick={() => {
+                    Router.push("/")
+                    localStorage.clear
+                  }}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </div>
                 </MenuItem>
               ))}
             </Menu>

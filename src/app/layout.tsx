@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={myFont.className}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
         <ThemeProvider theme={theme}>
-          <NavBar/>
+          {/* <NavBar/> */}
           {children}
           </ThemeProvider>
           </AppRouterCacheProvider>

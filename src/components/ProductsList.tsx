@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import ProductItem from "./ProductItem";
-import Products from "../db/products.json";
+import {Products} from "../db/products";
 
 export default function ProductsList() {
   

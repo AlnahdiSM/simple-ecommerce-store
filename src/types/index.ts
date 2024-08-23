@@ -1,2 +1,2 @@
-import Products from "../db/products.json";
+import {Products} from "../db/products";
 export type ProductsType= typeof Products[number]
