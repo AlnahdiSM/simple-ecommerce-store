@@ -19,65 +19,57 @@ import { Textarea } from "@/components/ui/textarea";
 
 import FileUploader from "@/components/FileUploader";
 import NavBar from "@/components/NavBar";
+import { useRouter } from "next/router"; // Import useRouter
 
 const formSchema = z.object({
   title: z.string(),
   description: z.string(),
   price: z.string(),
-  cardCover: z.instanceof(File).optional(), //this may to change,
-  img1: z.instanceof(File).optional(), //this may to change,
-  img2: z.instanceof(File).optional(), //this may to change,
-  img3: z.instanceof(File).optional(), //this may to change,
-  img4: z.instanceof(File).optional(), //this may to change,
-
-  // thumbnail: z.instanceof(File),
-  // image1: z.instanceof(File),
-  // image2: z.instanceof(File),
-  // image3: z.instanceof(File),
-  // image4: z.instanceof(File),
-  // image5: z.instanceof(File),
+  cardCover: z.instanceof(File).optional(),
+  img1: z.instanceof(File).optional(),
+  img2: z.instanceof(File).optional(),
+  img3: z.instanceof(File).optional(),
+  img4: z.instanceof(File).optional(),
 });
-export default function page() {
-  // 1. Define your form.
+
+export default function Page() {
+  const router = useRouter; // Initialize useRouter
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     const formData = new FormData();
 
     formData.append("title", values.title);
     formData.append("description", values.description);
     formData.append("price", values.price);
 
-    if (!values.cardCover) return;
-    formData.append("cardCover", values.cardCover);
-    if (!values.img1) return;
-    formData.append("img1", values.img1);
-    if (!values.img2) return;
-    formData.append("img2", values.img2);
-    if (!values.img3) return;
-    formData.append("img3", values.img3);
-    if (!values.img4) return;
-    formData.append("img4", values.img4);
+    if (values.cardCover) formData.append("cardCover", values.cardCover);
+    if (values.img1) formData.append("img1", values.img1);
+    if (values.img2) formData.append("img2", values.img2);
+    if (values.img3) formData.append("img3", values.img3);
+    if (values.img4) formData.append("img4", values.img4);
 
-    // formData.append("image1", values.image1);
-    // formData.append("image2", values.image2);
-    // formData.append("image3", values.image3);
-    // formData.append("image4", values.image4);
-    // formData.append("image5", values.image5);
+    try {
+      const response = await fetch("http://localhost:4000/api/", {
+        method: "POST",
+        body: formData,
+      });
 
-    // Now you can send formData to your server using fetch or any other method
-    console.log("Form Data:", formData);
-
-    fetch("/api/upload", { method: "POST", body: formData });
+      if (response.ok) {
+        router.push("/home"); // Redirect to the main page after successful submission
+      } else {
+        console.error("Failed to submit the form:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+    }
   }
 
   return (
     <>
-    <NavBar/>
-      {" "}
+      <NavBar />
       <Grid container className="p-6">
         <Grid item xs={12}>
           <Paper className="p-4 w-full">
@@ -87,7 +79,7 @@ export default function page() {
                 className="space-y-4 w-full"
               >
                 <div className="flex justify-between items-center">
-                  <Grid container xs={6} className=" w-full">
+                  <Grid container xs={6} className="w-full">
                     <Grid item xs={6}>
                       <FormField
                         control={form.control}
@@ -100,7 +92,6 @@ export default function page() {
                             <FormControl>
                               <Input placeholder="عنوان المنتج" {...field} />
                             </FormControl>
-
                             <FormMessage />
                           </FormItem>
                         )}
@@ -134,7 +125,6 @@ export default function page() {
                             <FormControl>
                               <Input placeholder="سعر المنتج" {...field} />
                             </FormControl>
-
                             <FormMessage />
                           </FormItem>
                         )}
@@ -162,14 +152,13 @@ export default function page() {
                                 }}
                               />
                             </FormControl>
-
                             <FormMessage />
                           </FormItem>
                         )}
                       />
                     </Grid>
                   </Grid>
-                  <Grid container xs={6} columnSpacing={2} className=" w-full">
+                  <Grid container xs={6} columnSpacing={2} className="w-full">
                     <Grid item xs={6}>
                       <FormField
                         control={form.control}
@@ -194,7 +183,6 @@ export default function page() {
                                 }}
                               />
                             </FormControl>
-
                             <FormMessage />
                           </FormItem>
                         )}
@@ -224,7 +212,6 @@ export default function page() {
                                 }}
                               />
                             </FormControl>
-
                             <FormMessage />
                           </FormItem>
                         )}
@@ -254,7 +241,6 @@ export default function page() {
                                 }}
                               />
                             </FormControl>
-
                             <FormMessage />
                           </FormItem>
                         )}
@@ -284,7 +270,6 @@ export default function page() {
                                 }}
                               />
                             </FormControl>
-
                             <FormMessage />
                           </FormItem>
                         )}
@@ -292,6 +277,7 @@ export default function page() {
                     </Grid>
                   </Grid>
                 </div>
+
                 <Button type="submit" className="w-full">
                   إضافة المتنج
                 </Button>

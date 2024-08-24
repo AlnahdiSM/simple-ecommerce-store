@@ -71,4 +71,19 @@
     img3: require('../../public/img/yellow-shopping-cart-blue-background_343170-6381.jpg'),
     img4: require('../../public/img/background.jpg'),
   },
+  
+ 
+  
  ];
+  export interface Product {
+  _id: string;
+  title: string;
+  description: string;
+  price: number;
+  cardCover: string;
+  img1: string;
+  img2: string;
+  img3: string;
+  img4: string;
+  __v: number;
+}
